@@ -572,7 +572,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
 
         has Node %!children-by-name;
 
-        method child-by-name(Str $name ) returns Node {
+        method child-by-name(Str $name --> Node ) {
             if %!children-by-name.elems != @!children.elems {
                 %!children-by-name = @!children.grep({$_.name.defined }).map({ $_.name => $_ });
             }
@@ -672,7 +672,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             self.all-children(:$real).grep({ $_.purpose.defined && $_.purpose eq $purpose });
         }
 
-        method template-for-purpose(Str $purpose) returns Template {
+        method template-for-purpose(Str $purpose --> Template ) {
             self.nodes-for-purpose($purpose).grep(*.is-template).first;
         }
 
@@ -688,7 +688,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             @reals;
         }
 
-        method delete() returns Bool {
+        method delete( --> Bool ) {
             my @res;
             for self.children -> $child {
                 @res.append: $child.delete;
@@ -715,23 +715,23 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             False;
         }
 
-        method path() returns Str {
+        method path( --> Str ) {
             $*SPEC.catdir(self.path-parts);
         }
 
-        method IO() returns IO::Path {
+        method IO( --> IO::Path ) {
             self.path.IO;
         }
 
-        method create() returns Bool {
+        method create( --> Bool ) {
             ...
         }
 
-        method delete() returns Bool {
+        method delete( --> Bool ) {
             ...
         }
 
-        method accepts-path(IO::Path:D ) returns Bool {
+        method accepts-path(IO::Path:D  --> Bool ) {
             ...
         }
     }
@@ -747,14 +747,14 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             self.new(:$parent,|%h);
         }
 
-        method create() returns Bool {
+        method create( --> Bool ) {
             my $fh = self.IO.open(:w);
             $fh.close;
         }
-        method delete() returns Bool {
+        method delete( --> Bool ) {
             so self.IO.unlink;
         }
-        method accepts-path(IO::Path:D $path) returns Bool {
+        method accepts-path(IO::Path:D $path --> Bool ) {
             $path.e && $path.f
         }
 
@@ -779,7 +779,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             $dir;
         }
 
-        method create() returns Bool {
+        method create( --> Bool ) {
             my @res = self.IO.mkdir();
             for self.children -> $child {
                 @res.append: $child.create;
@@ -787,7 +787,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             so all(@res);
         }
 
-        method accepts-path(IO::Path:D $path) returns Bool {
+        method accepts-path(IO::Path:D $path --> Bool ) {
             $path.e && $path.d
         }
 
@@ -799,7 +799,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
 
         proto method generate(|c) { * }
 
-        multi method generate(Str :$root = '.') returns Layout {
+        multi method generate(Str :$root = '.' --> Layout ) {
             self.generate(root => $root.IO);
         }
 
@@ -821,16 +821,16 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
 
         proto method from-json(|c) { * }
 
-        multi method from-json(Layout:U: Str :$path!, |c) returns Layout {
+        multi method from-json(Layout:U: Str :$path!, |c --> Layout ) {
             self.from-json(path => $path.IO, |c);
         }
 
-        multi method from-json(Layout:U: IO::Path :$path!, |c) returns Layout {
+        multi method from-json(Layout:U: IO::Path :$path!, |c --> Layout ) {
             self.from-json($path.slurp, |c);
         }
 
 
-        multi method from-json(Layout:U: Str $json, Str :$root = '.', Bool :$real) returns Layout {
+        multi method from-json(Layout:U: Str $json, Str :$root = '.', Bool :$real --> Layout ) {
             my $layout = self.from-hash(from-json($json), :$root);
             if $real {
                 $layout.realise-templates
@@ -843,7 +843,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
         }
 
 
-        method create(Str :$root) returns Bool {
+        method create(Str :$root --> Bool ) {
             $!root = $root.Str if $root.defined;
 
             if !$!root.IO.e {
@@ -856,7 +856,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
             so all(@res);
         }
 
-        method IO() returns IO::Path {
+        method IO( --> IO::Path ) {
             $!root.IO;
         }
     }

@@ -1,4 +1,6 @@
-use v6.c;
+#!/usr/bin/env perl6
+#
+use v6;
 
 use Oyatul;
 use Test;
@@ -44,7 +46,7 @@ for $layout.nodes-for-purpose('test', :real).grep({$_.name ne $me }) -> $test {
    my $proc = Proc::Async.new($*EXECUTABLE, '-I', $lib, $test.path);
    $proc.stdout.tap( { Empty });
    $proc.stderr.tap( { Empty });
-	ok do { await $proc.start }, "run { $test.path }";
+    ok do { await $proc.start }, "run { $test.path }";
 
 }
 }, "the synopsis runs ok";

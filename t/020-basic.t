@@ -33,7 +33,7 @@ lives-ok { $json = $layout.to-json() }, "to-json";
 
 my $layout2;
 
-lives-ok { $layout2 = Oyatul::Layout.from-json($json); }, "from-json"; 
+lives-ok { $layout2 = Oyatul::Layout.from-json($json); }, "from-json";
 is-deeply $layout2.to-hash, %hash, "and it's the same as the one we made earlier";
 
 for $layout.all-children -> $child {
@@ -42,7 +42,7 @@ for $layout.all-children -> $child {
 
 my $root = 't/test-root';
 
-lives-ok { $layout2 = Oyatul::Layout.from-json($json, :$root); }, "from-json (with root)"; 
+lives-ok { $layout2 = Oyatul::Layout.from-json($json, :$root); }, "from-json (with root)";
 
 for $layout2.all-children -> $child {
     nok $child.IO.e, "Child with path '{ $child.path }' doesn't exist";

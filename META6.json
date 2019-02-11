@@ -6,7 +6,7 @@
     "email": "jns+git@gellyfish.co.uk",
     "bugtracker": "http://github.com/jonathanstowe/Oyatul/issues"
   },
-  "perl": "6.c",
+  "perl": "6.*",
   "resources": [
     
   ],

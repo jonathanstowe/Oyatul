@@ -1,8 +1,8 @@
-use v6.c;
+use v6;
 
 =begin pod
 
-=head1 NAME 
+=head1 NAME
 
 Oyatul - Abstract representation of filesystem layout
 
@@ -51,7 +51,7 @@ my $lib = $layout.nodes-for-purpose('lib').first.path;
 
 # get all the instances for 'test' excluding the template
 for $layout.nodes-for-purpose('test', :real) -> $test {
-	run($*EXECUTABLE, '-I', $lib, $test.path);
+    run($*EXECUTABLE, '-I', $lib, $test.path);
 }
 
 =end code
@@ -168,7 +168,7 @@ This returns an L<IO::Path> object for the C<root> of the layout.
 
     class Oyatul::File does Oyatul::Node
 
-This represents a 'file' leaf-node in the layout. 
+This represents a 'file' leaf-node in the layout.
 
 =head3 method to-hash
 
@@ -244,7 +244,7 @@ will be done when it is being called via the L<Oyatul::Layout> C<from-hash>.
 
     method create (Oyatul::Directory: --> Bool)
 
-This will attempt to create the filesystem structure this directory 
+This will attempt to create the filesystem structure this directory
 represents by creating itself (with C<mkdir>) and iteratively calling
 C<create> on all of the children. It returns a Bool indicating
 whether all creation was successful.
@@ -343,7 +343,7 @@ This returns a list of all the instances that were created.
     role Oyatul::Template[Mu:U $real-type]
 
 This role is applied to a node in the layout which has a True value
-for the C<template> key, it is a placeholder for any number of 
+for the C<template> key, it is a placeholder for any number of
 named real nodes that may not be known until an instance of the
 layout is applied to the filesystem.
 
@@ -471,7 +471,7 @@ structured Hash.  Alternatively the description could be stored in any
 medium and the layout objects created individually based on the data.
 
 The top level item should be a Hash (or JSON Object,) with the key C<type>
-with the value 'layout', and C<children> which will be an Array of 
+with the value 'layout', and C<children> which will be an Array of
 Objects describing the child nodes.
 
 =head2 NODE KEYS
@@ -502,7 +502,7 @@ child objects.
 
 This is optional and if present will be the short name of a role that
 will be required (if it isn't already loaded,) and mixed in to the
-L<Oyatul::Node> that is instantiated from the description. If it 
+L<Oyatul::Node> that is instantiated from the description. If it
 cannot be loaded or the name doesn't specify a composable type then
 an exception will be thrown.
 
@@ -564,7 +564,7 @@ module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
         method is-template() {
             True;
         }
-        
+
     }
 
     my role Parent {

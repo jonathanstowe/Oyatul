@@ -7,7 +7,7 @@ use Test;
 
 use Oyatul;
 
-use lib $*PROGRAM.parent.child('lib').Str;
+use lib $*PROGRAM.parent.add('lib').absolute;
 
 my $layout;
 

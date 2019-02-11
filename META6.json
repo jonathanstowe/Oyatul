@@ -1,5 +1,8 @@
 {
   "name": "Oyatul",
+  "version": "0.0.6",
+  "auth": "github:jonathanstowe",
+  "api": "1.0",
   "source-url": "git://github.com/jonathanstowe/Oyatul.git",
   "support": {
     "source": "git://github.com/jonathanstowe/Oyatul.git",
@@ -13,7 +16,6 @@
   "build-depends": [
     
   ],
-  "auth": "github:jonathanstowe",
   "depends": [
     "JSON::Fast"
   ],
@@ -29,7 +31,6 @@
   "provides": {
     "Oyatul": "lib/Oyatul.pm"
   },
-  "version": "0.0.5",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],

@@ -521,7 +521,7 @@ layout.
 
 use JSON::Fast;
 
-module Oyatul:ver<0.0.5>:auth<github:jonathanstowe> {
+module Oyatul:ver<0.0.6>:auth<github:jonathanstowe>:api<1.0> {
 
     my Regex $exclude = /^<-[.]>/;
 

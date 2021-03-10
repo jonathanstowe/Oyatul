@@ -1,3 +1,7 @@
+v0.0.7		Wed 10 Mar 16:58:19 GMT 2021
+	* Renaming
+	* Spring clean
+	* Switch to GH actions
 v0.0.06     Mon 11 Feb 12:32:16 GMT 2019
     * Spring clean and upload to CPAN
 v0.0.5		Wed 25 Apr 21:33:49 BST 2018

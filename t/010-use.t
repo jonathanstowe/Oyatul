@@ -1,4 +1,4 @@
-#!perl6
+#!raku
 
 use v6;
 
@@ -8,4 +8,4 @@ use-ok 'Oyatul', 'Can use the module successfully';
 
 
 done-testing;
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab shiftwidth=4 ft=raku

@@ -521,7 +521,7 @@ layout.
 
 use JSON::Fast;
 
-module Oyatul:ver<0.0.6>:auth<github:jonathanstowe>:api<1.0> {
+module Oyatul:ver<0.0.7>:auth<github:jonathanstowe>:api<1.0> {
 
     my Regex $exclude = /^<-[.]>/;
 
@@ -861,4 +861,4 @@ module Oyatul:ver<0.0.6>:auth<github:jonathanstowe>:api<1.0> {
         }
     }
 }
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab shiftwidth=4 ft=raku

@@ -1,6 +1,6 @@
 {
   "name": "Oyatul",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "auth": "github:jonathanstowe",
   "api": "1.0",
   "source-url": "git://github.com/jonathanstowe/Oyatul.git",
@@ -9,6 +9,7 @@
     "email": "jns+git@gellyfish.co.uk",
     "bugtracker": "http://github.com/jonathanstowe/Oyatul/issues"
   },
+  "raku": "6.*",
   "perl": "6.*",
   "resources": [
     
@@ -35,5 +36,5 @@
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
   "description": "Abstract representation of a filesystem layout",
-  "meta-version": "0"
+  "meta-version": "1"
 }

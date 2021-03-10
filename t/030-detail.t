@@ -1,4 +1,4 @@
-#!perl6
+#!raku
 
 use v6;
 
@@ -59,4 +59,4 @@ for $layout.all-children(:real) -> $child {
 }
 
 done-testing;
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab shiftwidth=4 ft=raku

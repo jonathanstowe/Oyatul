@@ -2,7 +2,7 @@
 
 Abstract representation of a filesystem layout
 
-[![Build Status](https://travis-ci.org/jonathanstowe/Oyatul.svg?branch=master)](https://travis-ci.org/jonathanstowe/Oyatul)
+![Build Status](https://github.com/jonathanstowe/Tinky/workflows/CI/badge.svg)
 
 ## Synopsis
 
@@ -10,7 +10,7 @@ This runs the tests identified by 'purpose' test which can be in any
 location in the layout with the library directory identified by the
 purpose 'lib' :
 
-```perl6
+```raku
 use Oyatul;
 
 my $description = q:to/LAY/;
@@ -86,8 +86,7 @@ hopefully it will be useful in other applications.
 
 ## Installation
 
-Assuming you have a working Rakudo Perl 6 installation you should be able to
-install this with *zef* :
+Assuming you have a working Rakudo installation you should be able to install this with *zef* :
 
     # From the source directory
    
@@ -99,8 +98,7 @@ install this with *zef* :
 
 ## Support
 
-Suggestions and patches that may make it more useful in your software
-are welcomed via github at:
+Suggestions and patches that may make it more useful in your software are welcomed via github at:
 
 https://github.com/jonathanstowe/Oyatul/issues
 
@@ -110,4 +108,4 @@ This is free software.
 
 Please see the [LICENCE](LICENCE) file in the distribution
 
-© Jonathan Stowe 2016 - 2019
+© Jonathan Stowe 2016 - 2021

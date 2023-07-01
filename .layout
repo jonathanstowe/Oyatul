@@ -34,7 +34,7 @@
           "type": "directory",
           "children": [
             {
-              "name": "IDRole.pm",
+              "name": "IDRole.rakumod",
               "type": "file"
             }
           ]
@@ -67,7 +67,7 @@
       "children": [
         {
           "type": "file",
-          "name": "Oyatul.pm"
+          "name": "Oyatul.rakumod"
         }
       ],
       "type": "directory"

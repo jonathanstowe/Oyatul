@@ -5,7 +5,7 @@
     "util"
   ],
   "provides": {
-    "Oyatul": "lib/Oyatul.pm"
+    "Oyatul": "lib/Oyatul.rakumod"
   },
   "test-depends": [
     "Test"
@@ -20,7 +20,7 @@
   ],
   "api": "1.0",
   "meta-version": "1",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "raku": "6.*",
   "description": "Abstract representation of a filesystem layout",
   "name": "Oyatul",
